@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meine Projektseite</title>
+
+<style>
+:root {
+  --primary: #1e90ff;
+  --background: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-color: #1e1e1e;
+  --shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #eaeaea;
+    --shadow: 0 6px 20px rgba(0,0,0,0.5);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("voronghibli.png") center top / cover no-repeat fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  padding: 1.8rem;
+  background: var(--card-bg);
+  border-left: 6px solid var(--primary);
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.project-description {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.button {
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.button-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button-secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #999;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Meine Projektseite</h1>
+  <p>Hier findest du eine Übersicht meiner aktuellen Projekte</p>
+</header>
+
+<main>
+  <div class="projects-grid">
+
+    <!-- Chess Project -->
+    <div class="project-card">
+      <div class="project-header">♟️ Schachspiel im Browser</div>
+      <div class="project-description">
+        Vollwertiges Schachspiel mit Drag & Drop, Rochade, En Passant,
+        Umwandlung, Schach, Matt und Patt – direkt im Browser spielbar.
+      </div>
+      <div class="project-links">
+        <a class="button button-primary" href="https://bambuking.github.io/chess/" target="_blank">
+          Live Demo
+        </a>
+        <a class="button button-secondary" href="https://github.com/bambuking/chess" target="_blank">
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- FindYourDistro Project -->
+    <div class="project-card">
+      <div class="project-header">🐧 FindYourDistro</div>
+      <div class="project-description">
+        Interaktives Linux-Distro-Quiz mit 50 Distributionen.
+        Trait-basiertes Matching-System für Desktop, Gaming, Server,
+        Security und Immutable-Modelle.
+      </div>
+      <div class="project-links">
+        <a class="button button-primary" href="https://bambuking.github.io/findyourdistro/" target="_blank">
+          Live Demo
+        </a>
+        <a class="button button-secondary" href="https://github.com/bambuking/findyourdistro" target="_blank">
+          GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 - bambuking
+</footer>
+
+</body>
+</html>
